@@ -14,7 +14,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
+backend_url = os.getenv("BACKEND_URL", "http://localhost:8000")
 # --- FONCTION POUR APPELER LE BACKEND ---
 def call_backend(endpoint, method="GET", json_payload=None):
     """Utilitaire pour appeler notre API FastAPI."""
