@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.suggested-questions {
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.suggested-questions p {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.suggested-question {
+  padding: 8px;
+  margin-bottom: 5px;
+  background-color: #e6f7ff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.suggested-question:hover {
+  background-color: #bae7ff;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.message-avatar {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.message-content {
+  padding: 8px 12px;
+  border-radius: 18px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.user-message .message-content {
+  background: #1890ff;
+  color: white;
+  margin-left: auto;
+}
+
+.assistant-message .message-content {
+  background: #f0f0f0;
+  color: #333;
+}
