@@ -1,9 +1,13 @@
+# streamlit_app/streamlit_app.py
+
+# --- IMPORTS (CORRIGÉ ET COMPLET) ---
+import os  # LIGNE MANQUANTE QUI PROVOQUE L'ERREUR
 import streamlit as st
 import requests
 import pandas as pd
 from datetime import datetime
 
-# Configuration de la page
+# --- CONFIGURATION DE LA PAGE ---
 st.set_page_config(
     page_title="Rapports de Management Financier",
     page_icon="📊",
@@ -11,10 +15,11 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Fonction pour appeler le backend
+# --- FONCTION POUR APPELER LE BACKEND ---
 def call_backend(endpoint, method="GET", json_payload=None):
     """Utilitaire pour appeler notre API FastAPI."""
-    backend_url = os.getenv("BACKEND_URL", "http://localhost:8000")
+    # La ligne suivante fonctionnait car os est maintenant importé
+    backend_url = os.getenv("BACKEND_URL", "http://localhost:8000") 
     try:
         if method == "GET":
             response = requests.get(f"{backend_url}/api/{endpoint}")
@@ -26,7 +31,7 @@ def call_backend(endpoint, method="GET", json_payload=None):
         st.error(f"Erreur de connexion au backend : {e}")
         return None
 
-# Page d'accueil simple
+# --- PAGE D'ACCUEIL ---
 st.title("🎉 Bienvenue dans l'Application de Rapports Financiers !")
 st.markdown("""
 Utilisez le menu à gauche pour naviguer entre les différentes sections :
